@@ -1,0 +1,21 @@
+Matplotlib Functions:
+
+1 Grid: plt.prid()
+
+2 Display: plt.show()
+
+3 Lables: plt.xlable()
+           plt.ylable()
+
+4 Axix Limits: plt.xlim()
+                plt.ylim()
+
+5 Plotting: plt.plot()
+
+
+6 Axis Ticks: plt.xticks()
+              plt.yticks()
+
+7. Title: plt.title()
+
+8 Legend: pit.legend()
