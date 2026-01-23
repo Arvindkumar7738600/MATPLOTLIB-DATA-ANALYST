@@ -71,3 +71,41 @@ plt.tight_layout()
 plt.savefig('release_year_Scatter.png')
 plt.show()
 
+
+
+country_counts = df['country'].value_counts().head(10)
+plt.figure(figsize=(8, 6))
+plt.barh(country_counts.index,
+          country_counts.values,
+          color = 'teal'
+)
+plt.title('Top 10 Countries by Number of Shows')
+plt.xlabel('Number')
+plt.ylabel('Country')
+plt.tight_layout()
+
+plt.savefig('Top 10 Countries.png')
+plt.show()
+
+
+content_by_year = df.groupby(['release_year', 'type']) .size().unstack().fillna(0)
+fig, ax = plt.subplots(1,2, figsize=(12,5))
+#first subplot:movies
+ax [0]. plot (content_by_year.index, content_by_year ['Movie'], color= 'blue')
+ax [0]. set_title('Movies Released Per Year')
+ax [0]. set_xlabel('Year')
+ax [0]. set_ylabel( 'Number of Movies')
+
+
+#second subplot: TV Shows
+ax [0]. plot (content_by_year.index, content_by_year ['TV Show'], color='orange')
+ax [0]. set_title('TV Shows Released Per Year')
+ax [0]. set_xlabel( 'Year')
+ax [0]. set_ylabel ( 'Number of Movies')
+
+
+fig.suptitle('Compare of Movie and TV showa Released Over Years')
+
+plt.tight_layout()
+plt.savefig('movies and tv shows Released Data')
+plt.show()
